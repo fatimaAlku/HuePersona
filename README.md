@@ -3,6 +3,8 @@
 
 A full-stack MVC web application inspired by the Korean color analysis test that helps users discover their color palette based on their favorite colors.
 
+
+
 ## Demo
 ![HuePersona Demo](./huepersona-prototype.png)
 
@@ -66,15 +68,10 @@ A full-stack MVC web application inspired by the Korean color analysis test that
 ### 5. Styling
 
 * Responsive UI using **CSS**.
-* Custom theming based on color selection.
 
 ---
 
-### 6. Valid Project Idea
 
-HuePersona offers a playful yet insightful experience. It turns user color preferences into personality profiles, fostering self-reflection in an engaging way.
-
----
 
 ## Implementation Steps
 
@@ -94,7 +91,7 @@ HuePersona offers a playful yet insightful experience. It turns user color prefe
 4. **Color Analysis Logic**
 
    * Interface to choose colors.
-   * Backend logic to map colors → traits.
+   * Backend logic to map colors → profile.
 
 5. **CRUD Functionality**
 
@@ -102,7 +99,7 @@ HuePersona offers a playful yet insightful experience. It turns user color prefe
 
 6. **Unit Testing**
 
-   * Use Jest or Mocha for model and auth testing.
+   * Use Jest for model and auth testing.
 
 7. **Styling and UX**
 
@@ -112,9 +109,46 @@ HuePersona offers a playful yet insightful experience. It turns user color prefe
 
    * Deployed using ......
 
+
 ---
 
-## Bonus Features (Optional)
+## Route Table
+
+ Protected Routes (JWT Required)
+ User Routes
+
+| Method | Route                 | Description                   |
+| ------ | --------------------- | ----------------------------- |
+| GET    | `/user/profile`       | View logged-in user's profile |
+| GET    | `/user/favorites`     | View favorite colors          |
+| POST   | `/user/favorites`     | Add a color to favorites      |
+| DELETE | `/user/favorites/:id` | Remove a color from favorites |
+
+
+
+## Color Routes
+
+| Method | Route         | Description                      |
+| ------ | ------------- | -------------------------------- |
+| GET    | `/colors`     | List all colors                  |
+| GET    | `/colors/:id` | View one color with traits       |
+| POST   | `/colors`     | Add a new color  |
+| PUT    | `/colors/:id` | Update a color   |
+| DELETE | `/colors/:id` | Delete a color   |
+
+
+## Personality Test Routes
+
+| Method | Route           | Description                     |
+| ------ | --------------- | ------------------------------- |
+| GET    | `/test`         | Show personality test           |
+| POST   | `/test`         | Submit test answers             |
+| GET    | `/test/results` | View user’s latest test results |
+
+
+---
+
+## Bonus Features
 
 * **RESTful API** for front-end/client interaction.
 * Load testing with **Artillery**.
@@ -128,14 +162,14 @@ HuePersona offers a playful yet insightful experience. It turns user color prefe
 * **Database:** MongoDB, Mongoose
 * **Authentication:** JWT
 * **Frontend:** EJS / React
-* **Styling:** Tailwind CSS 
+* **Styling:** CSS 
 * **Testing:** Jest 
 
 ---
 
 ## Inspiration
 
-Inspired by Korean personality color tests that link emotions and identity to color choices. HuePersona blends cultural psychology and web tech for a uniquely engaging app.
+Inspired by Korean color analysis tests that link personality and identity to color choices. HuePersona blends cultural psychology and web tech for a uniquely engaging app.
 
 ---
 
