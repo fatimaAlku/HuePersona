@@ -41,8 +41,6 @@ function SignUp () {
             <h1>HUEPERSONA</h1>
             <p>
               Discover your personality through color.<br />
-              HuePersona blends Korean color psychology<br />
-              with web tech for a uniquely engaging experience.
             </p>
           </div>
         </div>

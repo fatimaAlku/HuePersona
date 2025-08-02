@@ -33,7 +33,7 @@ function Login () {
           <div className="info-card">
             <h1>HUEPERSONA</h1>
             <p>
-              Inspired by Korean personality color tests<br />
+              Inspired by Korean color analysis tests<br />
               that link emotions and identity to color choices.<br />
               HuePersona blends cultural psychology and web tech<br />
               for a uniquely engaging app.
