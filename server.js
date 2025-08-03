@@ -1,6 +1,6 @@
 require('dotenv').config()
 const app = require('./app')
-const db = require('./config/db')
+const db = require('./models/db')
 const PORT = process.env.PORT || 3000
 
 db.once('open', () => {

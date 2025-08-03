@@ -4,7 +4,7 @@ const jsxEngine = require('jsx-view-engine');
 const methodOverride = require('method-override');
 
 const userRoutes = require('./controllers/auth/routeController');
-const fruitsRouter = require('./controllers/fruits/routeController');
+const colorsRouter = require('./controllers/colors/routeController');
 const apiRoutes = require('./routes/apiRoutes');
 
 const app = express();
@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 
 // ===== Web Routes (Render Views) =====
 app.use('/users', userRoutes);
-app.use('/fruits', fruitsRouter);
+app.use('/colors', colorsRouter);
 
 // ===== API Routes (JSON responses) =====
 app.use('/api', apiRoutes);

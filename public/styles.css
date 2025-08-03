@@ -90,3 +90,24 @@
   font-size: 0.95rem;
   line-height: 1.6;
 }
+
+.colors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.color-card {
+  padding: 1rem;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.color-sample {
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
