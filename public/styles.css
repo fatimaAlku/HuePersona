@@ -1,10 +1,11 @@
 .auth-container {
   display: flex;
   height: 90vh;
-  max-width: 960px;
+  max-width: 1400px;
   margin: 0 auto;
   border-radius: 20px;
   overflow: hidden;
+  margin-top: 45px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
 
@@ -31,8 +32,8 @@
   font-weight: 700;
 }
 
-.auth-form p {
-  color: #888;
+.auth-form p { 
+  margin-bottom: 5px;
   font-size: 0.9rem;
 }
 
@@ -42,6 +43,7 @@
   background: #f2f2f2;
   border-radius: 8px;
   font-size: 1rem;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .auth-form button {

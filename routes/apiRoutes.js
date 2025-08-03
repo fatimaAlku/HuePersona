@@ -12,7 +12,7 @@ router.get('/users/profile', userApiController.auth, userApiController.getProfil
 router.put('/users/:id', userApiController.auth, userApiController.updateUser)
 router.delete('/users/:id', userApiController.auth, userApiController.deleteUser)
 
-// Fruit API Routes
+// Color API Routes
 router.get('/colors', userApiController.auth, colorDataController.index, colorApiController.index)
 router.get('/colors/:id', userApiController.auth, colorDataController.show, colorApiController.show)
 router.post('/colors', userApiController.auth, colorDataController.create, colorApiController.create)

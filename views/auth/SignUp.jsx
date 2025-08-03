@@ -32,7 +32,7 @@ function SignUp () {
             />
 
             <button type="submit">Sign Up</button>
-            <p className="switch-link">Already have an account? <a href="/users/signin">Login</a></p>
+            <p className="switch-link">Already have an account? <a href="/users/login">Login</a></p>
           </form>
         </div>
 
