@@ -9,6 +9,12 @@ const apiRoutes = require('./routes/apiRoutes');
 
 const app = express();
 
+const testController = require('./controllers/colors/testController');
+const { auth } = require('./controllers/auth/dataController');
+
+app.get('/test', testController.showTestForm)
+
+
 
 app.set('view engine', 'jsx');
 app.engine('jsx', jsxEngine());

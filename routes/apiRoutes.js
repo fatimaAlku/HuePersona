@@ -4,6 +4,8 @@ const userApiController = require('../controllers/auth/apiController')
 const colorApiController = require('../controllers/colors/apiController')
 const colorDataController = require('../controllers/colors/dataController')
 const userDataController = require('../controllers/auth/dataController')
+const testController = require('../controllers/colors/testController')
+
 
 // User API Routes
 router.post('/users', userApiController.createUser)
@@ -18,5 +20,7 @@ router.get('/colors/:id', userApiController.auth, colorDataController.show, colo
 router.post('/colors', userApiController.auth, colorDataController.create, colorApiController.create)
 router.put('/colors/:id', userApiController.auth, colorDataController.update, colorApiController.update)
 router.delete('/colors/:id', userApiController.auth, colorDataController.destroy, colorApiController.destroy)
+
+
 
 module.exports = router 

@@ -309,6 +309,24 @@ form {
   margin-top: 1.5rem;
 }
 
+.take-test-button {
+  background: linear-gradient(to right, #ff99cc, #cc66ff);
+  color: white;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.take-test-button:hover {
+  opacity: 0.9;
+}
+
+
 /* === COLORS NEW === */
 .add-color-title {
   display: flex;

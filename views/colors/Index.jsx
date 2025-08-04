@@ -11,6 +11,13 @@ function Index(props) {
 
       <div className="color collection">
         <h2>discover yourself through your color palette</h2>
+
+         <div className="test-link">
+    <a href={`/test?token=${props.token}`} className="take-test-button">
+      🎨 Take the HuePersona Test
+    </a>
+  </div>
+  
         <a href={`/colors/new?token=${props.token}`} className="add color button">
           Add New Color
         </a>
