@@ -7,12 +7,15 @@ const userRoutes = require('./controllers/auth/routeController');
 const colorsRouter = require('./controllers/colors/routeController');
 const apiRoutes = require('./routes/apiRoutes');
 
+
 const app = express();
 
-const testController = require('./controllers/colors/testController');
-const { auth } = require('./controllers/auth/dataController');
 
-app.get('/test', testController.showTestForm)
+const testController = require('./controllers/colors/testController');
+
+app.get('/test', testController.showTestForm);
+app.post('/results', testController.handleResults); 
+
 
 
 

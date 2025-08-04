@@ -3,6 +3,8 @@ const router = express.Router();
 const viewController = require('./viewController.js')
 const dataController = require('./dataController.js')
 const authDataController = require('../auth/dataController.js')
+const testController = require('./testController.js');
+
 // add routes
 // Index
 router.get('/', authDataController.auth
@@ -24,5 +26,16 @@ router.post('/', authDataController.auth, dataController.create, viewController.
 router.get('/:id/edit', authDataController.auth, dataController.show, viewController.edit);
 // Show
 router.get('/:id', authDataController.auth, dataController.show, viewController.show);
+
+
+
+// Test Form Route (GET)
+router.get('/test', authDataController.auth, testController.showTestForm);
+
+// Test Result Submission (POST)
+router.post('/results', authDataController.auth, testController.handleResults);
+
+
+
 // export router
 module.exports = router;

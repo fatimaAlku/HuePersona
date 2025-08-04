@@ -9,9 +9,9 @@ const palettes = {
     { name: 'Mint', hexValue: '#98FF98', description: 'Fresh and soothing, like a morning breeze.' }
   ],
   bold: [
-    { name: 'Crimson Red', hexValue: '#DC143C', description: 'A bold and energetic red.' },
-    { name: 'Sunshine Yellow', hexValue: '#FFD700', description: 'Bright and optimistic yellow tone.' },
-    { name: 'Electric Purple', hexValue: '#BF00FF', description: 'A powerful purple that makes a statement.' }
+    { name: 'Crimson', hexValue: '#DC143C', description: 'Fierce and passionate red.' },
+    { name: 'Gold', hexValue: '#FFD700', description: 'Bold and radiant gold.' },
+    { name: 'Electric Blue', hexValue: '#7DF9FF', description: 'Striking, energetic blue.' }
   ],
   balanced: [
     { name: 'Olive Green', hexValue: '#808000', description: 'Grounded and natural, symbolizing balance.' },

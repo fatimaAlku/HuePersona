@@ -6,7 +6,7 @@ function TestForm(props) {
     <Layout pageTitle="Color Palette Test">
       <h1 className="test-title">Discover Your Color Palette</h1>
 
-      <form action={`/results?token=${props.token}`} method="POST" className="test-form">
+      <form action={`/colors/results?token=${props.token}`} method="POST" className="test-form">
 
         <div className="test-question">
           <label>1. Which color do you feel most drawn to?</label>
