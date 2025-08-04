@@ -41,7 +41,7 @@ function New(props) {
 
         <div className="action div">
           <button type="submit" className="submit button">
-            ➕ Create Color
+             Create Color
           </button>
           <a href={`/colors?token=${props.token}`} className="back button">
             ← Back to All Colors

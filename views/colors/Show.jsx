@@ -6,40 +6,32 @@ function Show(props) {
 
   return (
     <Layout pageTitle={color.name}>
-      <h1>{color.name}</h1>
+    {/* <h1 className="show-title">{color.name}</h1>*/}
 
-      <div className="color-card">
-        <div
-          className="color-preview"
-          style={{
-            backgroundColor: color.hexValue,
-            height: '100px',
-            borderRadius: '8px',
-            marginBottom: '1rem'
-          }}
-        ></div>
+      <div className="show-color-container">
+        <div className="color-card">
+          <div
+            className="color-sample"
+            style={{ backgroundColor: color.hexValue }}
+          ></div>
 
-        <div className="color-info">
-          <p><strong>Name:</strong> {color.name}</p>
-          <p><strong>Hex Value:</strong> {color.hexValue}</p>
-          <p><strong>Description:</strong> {color.description || 'No description provided.'}</p>
-        </div>
+          <div className="color-name"><strong>{color.name}</strong></div>
+          <div className="color-hex">Hex: {color.hexValue}</div>
+          <div className="color-desc">{color.description || 'No description provided.'}</div>
 
-        <div className="d-flex gap-2 mt-3">
-          <a href={`/colors?token=${props.token}`} className="btn btn-secondary">
-            ← Back to All Colors
-          </a>
-          <a href={`/colors/${color._id}/edit?token=${props.token}`} className="btn btn-primary">
-            Edit {color.name}
-          </a>
-        </div>
-
-        <div className="mt-3">
-          <form action={`/colors/${color._id}?_method=DELETE&token=${props.token}`} method="POST">
-            <button type="submit" className="btn btn-danger">
-              Delete {color.name}
-            </button>
-          </form>
+          <div className="color.actions">
+            <a href={`/colors?token=${props.token}`} className="back-button">
+              ← Back to all Colors
+            </a>
+            <a href={`/colors/${color._id}/edit?token=${props.token}`} className="edit-button">
+              Edit
+            </a>
+            <form action={`/colors/${color._id}?_method=DELETE&token=${props.token}`} method="POST">
+              <button type="submit" className="delete-button">
+                Delete
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </Layout>

@@ -6,13 +6,13 @@ function Index(props) {
 
   return (
     <Layout pageTitle="All Colors">
-      <h1 className="page-title">HuePersona</h1>
+      <h1 className="hue-title">HuePersona</h1>
 
 
       <div className="color collection">
-        <h2>Your Color Collection</h2>
+        <h2>discover yourself through your color palette</h2>
         <a href={`/colors/new?token=${props.token}`} className="add color button">
-          ➕ Add New Color
+          Add New Color
         </a>
       </div>
 

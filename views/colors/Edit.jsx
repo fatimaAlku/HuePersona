@@ -6,7 +6,7 @@ function Edit(props) {
 
   return (
     <Layout pageTitle={`Edit ${name}`}>
-      <h1>Edit {name}</h1>
+      <h1 id = "edit-page" className>Edit {name}</h1>
 
       <form action={`/colors/${_id}?_method=PUT&token=${props.token}`} method="POST">
         <div className="form-group">
@@ -44,11 +44,11 @@ function Edit(props) {
           />
         </div>
 
-        <div className="d-flex gap-2">
-          <button type="submit" className="btn btn-primary">
+        <div className="Edit-actions">
+          <button type="submit" className="update-button">
             Update Color
           </button>
-          <a href={`/colors/${_id}?token=${props.token}`} className="btn btn-secondary">
+          <a href={`/colors/${_id}?token=${props.token}`} className="back-button">
             ← Back to {name}
           </a>
         </div>
