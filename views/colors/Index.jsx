@@ -6,11 +6,12 @@ function Index(props) {
 
   return (
     <Layout pageTitle="All Colors">
-      <h1>All Colors</h1>
+      <h1 className="page-title">HuePersona</h1>
 
-      <div className="d-flex justify-between align-center mb-3">
+
+      <div className="color collection">
         <h2>Your Color Collection</h2>
-        <a href={`/colors/new?token=${props.token}`} className="btn btn-primary">
+        <a href={`/colors/new?token=${props.token}`} className="add color button">
           ➕ Add New Color
         </a>
       </div>
@@ -18,7 +19,7 @@ function Index(props) {
       {colors.length === 0 ? (
         <div className="text-center">
           <p>No colors yet! Add your first color to get started.</p>
-          <a href={`/colors/new?token=${props.token}`} className="btn btn-primary">
+          <a href={`/colors/new?token=${props.token}`} className="add color button">
             Add Your First Color
           </a>
         </div>
@@ -30,11 +31,11 @@ function Index(props) {
               <div className="color-name"><strong>{color.name}</strong></div>
               <div className="color-hex">Hex: {color.hexValue}</div>
               <div className="color-desc">{color.description}</div>
-              <div className="d-flex gap-2 mt-2">
-                <a href={`/colors/${color._id}?token=${props.token}`} className="btn btn-secondary">
+              <div className="color actions">
+                <a href={`/colors/${color._id}?token=${props.token}`} className="view color">
                   View
                 </a>
-                <a href={`/colors/${color._id}/edit?token=${props.token}`} className="btn btn-primary">
+                <a href={`/colors/${color._id}/edit?token=${props.token}`} className="edit color">
                   Edit
                 </a>
               </div>

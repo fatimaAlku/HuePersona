@@ -2,9 +2,9 @@ const Color = require('../../models/color.js')
 
 // API Color controllers - returns JSON responses
 const apiController = {
-  // Get all fruits for authenticated user
+  // Get all colors for authenticated user
   index(req, res) {
-    res.json(res.locals.data.fruits)
+    res.json(res.locals.data.colors)
   },
 
   // Get single color

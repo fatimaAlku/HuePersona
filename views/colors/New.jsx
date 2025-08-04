@@ -4,7 +4,7 @@ const Layout = require('../layouts/Layout');
 function New(props) {
   return (
     <Layout pageTitle="Add New Color">
-      <h1>Add New Color</h1>
+      <h1 className ="add-color-title" >Add New Color</h1>
 
       <form action={`/colors?token=${props.token}`} method="POST">
         <div className="form-group">
@@ -13,7 +13,7 @@ function New(props) {
             type="text"
             id="name"
             name="name"
-            placeholder="Enter color name..."
+            placeholder="Enter color name"
             required
           />
         </div>
@@ -39,11 +39,11 @@ function New(props) {
           />
         </div>
 
-        <div className="d-flex gap-2">
-          <button type="submit" className="btn btn-primary">
+        <div className="action div">
+          <button type="submit" className="submit button">
             ➕ Create Color
           </button>
-          <a href={`/colors?token=${props.token}`} className="btn btn-secondary">
+          <a href={`/colors?token=${props.token}`} className="back button">
             ← Back to All Colors
           </a>
         </div>

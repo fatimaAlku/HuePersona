@@ -1,11 +1,5 @@
 const RESOURCE_PATH = '/colors'
 const viewController = {
-  signUp(req, res, next){
-    res.render('/auth/SignUp')
-  },
-  signIn(req, res, next){
-    res.render('/auth/Login')
-  },
   index(req, res, next){
     res.render('colors/Index', res.locals.data)
   },

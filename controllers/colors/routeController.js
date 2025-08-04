@@ -8,7 +8,7 @@ const authDataController = require('../auth/dataController.js')
 router.get('/', authDataController.auth
     /* check if the token exists in the header or the query, set req.user and res.locals.data.token */ , 
     dataController.index
-    /*grab and save the logged in user's fruits */, 
+    /*grab and save the logged in user's colors */, 
     viewController.index
     /* display the logged in users fruits and also the link to the new page with the token*/
 );

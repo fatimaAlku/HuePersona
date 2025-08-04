@@ -6,16 +6,18 @@ function Login () {
     <Layout>
       <div className="auth-container">
         <div className="auth-left">
-          <form className="auth-form" action="/users/signin" method="POST">
+          <form className="auth-form" action="/users/login" method="POST">
+
             <h2>Login</h2>
             <p>Login with your username & password</p>
 
             <input
-              type="text"
-              name="username"
-              placeholder="Username"
-              required
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
             />
+
 
             <input
               type="password"

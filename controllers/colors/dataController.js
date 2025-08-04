@@ -3,8 +3,8 @@ const Color = require('../../models/color.js')
 const dataController = {}
 dataController.index = async (req,res,next) => {
    try {
-    const user = await req.user.populate('colors')
-    res.locals.data.colors = user.colors
+    const user = await req.user.populate('favoriteColors')
+    res.locals.data.colors = user.favoriteColors
     next()
    } catch(error) {
     res.status(400).send({ message: error.message })
@@ -66,7 +66,7 @@ dataController.show = async (req, res, next) => {
     try {
         res.locals.data.color = await Color.findById(req.params.id)
         if(!res.locals.data.color){
-            throw new error(`could not locate a color with the id ${req.params.id}`)
+            throw new Error(`could not locate a color with the id ${req.params.id}`)
         }
         next()
     } catch (error) {
