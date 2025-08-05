@@ -29,6 +29,7 @@ const testController = {
   // POST /results – process test, generate palette
   handleResults: async (req, res) => {
     try {
+
       const userId = req.user._id
       const answers = Object.values(req.body)
 

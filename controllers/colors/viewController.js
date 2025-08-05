@@ -1,8 +1,12 @@
 const RESOURCE_PATH = '/colors'
 const viewController = {
   index(req, res, next){
-    res.render('colors/Index', res.locals.data)
+    res.render('colors/Index', {
+      colors: res.locals.data.colors,
+      token: res.locals.data.token
+    })
   },
+
   show(req, res, next){
     res.render('colors/Show', res.locals.data)
   },
