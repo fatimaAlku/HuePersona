@@ -1,6 +1,8 @@
 /* === GLOBAL BASE === */
 body {
   font-family: 'Times New Roman', Times, serif;
+  background: linear-gradient(to bottom right, #f3f0ff, #f9f7ff);
+  min-height: 100vh;
 }
 
 /* === AUTH CONTAINER === */
@@ -99,24 +101,56 @@ body {
 }
 
 /* === COLORS INDEX === */
+.hue-title {
+  font-size: 2.5rem;
+  margin-top: 130px;
+  text-align: center;
+  color: #865dff;
+}
+
+.color.collection h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.25rem;
+  font-weight: semi-bold;
+}
+
+.color.collection p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 20px;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
 .colors-grid {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 1.3rem;
 }
 
 .color-card {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 24px rgba(167, 116, 248, 0.15);
   padding: 1.25rem;
-  transition: transform 0.2s ease;
   text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  margin-left: 15px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 320px;
+  width: 230px;
 }
 
 .color-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.03);
+  box-shadow: 0 10px 28px rgba(137, 96, 248, 0.2);
 }
+
 
 .color-sample {
   width: 100%;
@@ -132,7 +166,7 @@ body {
 }
 
 .color-hex {
-  font-family: monospace;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
 }
@@ -145,6 +179,7 @@ body {
 
 .color.actions {
   display: flex;
+  justify-content: center;
   gap: 0.75rem;
   margin-top: 0.75rem;
 }
@@ -182,36 +217,41 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 15px;
+  margin: 30px 0 25px;
+  gap: 0.75rem;
   font-family: 'Times New Roman', Times, serif;
 }
 
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
 
-.add.color.button {
+/* Apply shared styles to both buttons */
+.add-color-button,
+.logout-button {
   background: linear-gradient(to right, #a974f8, #865dff);
-  color: #fff;
+  color: white;
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
   transition: background 0.3s ease;
-  margin-top: 0.75rem;
+  min-width: 150px;
+  text-align: center;
 }
 
-.add.color.button:hover {
+.add-color-button:hover,
+.logout-button:hover {
   opacity: 0.9;
 }
 
-/* === SHARED TEXT UTILITIES === */
-.hue-title {
-  text-align: center;
-  margin-top: 80px;
-  margin-bottom: 5px;
-  font-family: 'Times New Roman', Times, serif;
-}
 
+
+/* === SHARED TEXT UTILITIES === */
 .text-center {
   display: flex;
   flex-direction: column;
@@ -221,6 +261,7 @@ body {
   text-align: center;
   gap: 1rem;
 }
+
 
 /* === FORM STYLING (Shared New & Edit) === */
 form {
@@ -260,6 +301,7 @@ form {
   border-color: #a974f8;
   outline: none;
 }
+
 
 /* Shared Button Styles */
 .submit.button,
@@ -345,73 +387,107 @@ form {
   margin-top: 190px;
 }
 
-/* === COLORS SHOW === */
-
+/* === SHOW COLOR PAGE === */
 .show-color-container {
-  max-width: 800px;
-  margin: 4rem auto;
-  padding: 1rem;
-}
-
-.color.actions {
+  position: fixed; /* lock it to the viewport */
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
-  gap: 0.75rem;
-  margin-top: 0.9rem;
+  align-items: center;
+  background-color: #f8f4ff;
+  padding: 1rem; /* fallback space on small screens */
+  z-index: 1;
 }
 
-.delete-button {
-  background: black;
-  color: white;
-  border: none;
-  padding: 0.7rem 1.5rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  cursor: pointer;
+
+.show-color-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(137, 96, 248, 0.1);
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
   font-family: 'Times New Roman', Times, serif;
-  transition: background 0.3s ease;
 }
 
-.delete-button:hover {
-  background: #e60000;
+.color-sample-show {
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-.color-hex {
-    font-family: 'Times New Roman', Times, serif;
+.color-name-show {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
-/* Back Button */
-.back-button {
-  padding: 0.6rem 1.2rem;
+.color-hex-show {
+  font-size: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 0.5rem;
+}
+
+.color-desc-show {
+  font-size: 0.95rem;
+  color: black;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+.color.actions.show {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.back-button-showpage,
+.edit-button-showpage,
+.delete-button-showpage {
+  padding: 0.55rem 1.1rem;
   font-size: 0.9rem;
   font-weight: 500;
-  border-radius: 6px;
-  background: #f0f0f0;
-  color: #333;
+  border-radius: 8px;
   text-decoration: none;
-  font-family: 'Times New Roman', Times, serif;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
-.back-button:hover {
+.back-button-showpage {
+  background: #f0f0f0;
+  color: #333;
+  margin-right: 20px;
+}
+
+.back-button-showpage:hover {
   background: #e0e0e0;
 }
 
-
-.edit-button {
-  background: linear-gradient(to right, #a974f8, #865dff);
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border-radius: 6px;
-  text-decoration: none;
-  font-family: 'Times New Roman', Times, serif;
-  transition: opacity 0.3s ease;
+.edit-button-showpage {
+  background: #e0e0e0;
+  color: #333;
 }
 
-.edit-button:hover {
+.edit-button-showpage:hover {
   opacity: 0.9;
+}
+
+.delete-button-showpage {
+  background: black;
+  color: white;
+  width: 120px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.delete-button-showpage:hover {
+  background: #333;
 }
 
 

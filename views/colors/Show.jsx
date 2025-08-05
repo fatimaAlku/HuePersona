@@ -6,28 +6,27 @@ function Show(props) {
 
   return (
     <Layout pageTitle={color.name}>
-    {/* <h1 className="show-title">{color.name}</h1>*/}
 
       <div className="show-color-container">
-        <div className="color-card">
+        <div className="show-color-card">
           <div
-            className="color-sample"
+            className="color-sample-show"
             style={{ backgroundColor: color.hexValue }}
           ></div>
 
-          <div className="color-name"><strong>{color.name}</strong></div>
-          <div className="color-hex">Hex: {color.hexValue}</div>
-          <div className="color-desc">{color.description || 'No description provided.'}</div>
+          <div className="color-name-show"><strong>{color.name}</strong></div>
+          <div className="color-hex-show">Hex: {color.hexValue}</div>
+          <div className="color-desc-show">{color.description || 'No description provided.'}</div>
 
-          <div className="color.actions">
-            <a href={`/colors?token=${props.token}`} className="back-button">
+          <div className="color.actions.show">
+            <a href={`/colors?token=${props.token}`} className="back-button-showpage">
               ← Back to all Colors
             </a>
-            <a href={`/colors/${color._id}/edit?token=${props.token}`} className="edit-button">
+            <a href={`/colors/${color._id}/edit?token=${props.token}`} className="edit-button-showpage">
               Edit
             </a>
             <form action={`/colors/${color._id}?_method=DELETE&token=${props.token}`} method="POST">
-              <button type="submit" className="delete-button">
+              <button type="submit" className="delete-button-showpage">
                 Delete
               </button>
             </form>
