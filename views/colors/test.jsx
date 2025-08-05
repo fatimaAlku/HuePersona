@@ -33,7 +33,7 @@ function TestForm(props) {
           <select name="q3" required>
             <option value="">Select an option</option>
             <option value="calm">Blue and white</option>
-            <option value="bold">Red and gold</option>
+            <option value="bold">black and gold</option>
             <option value="balanced">Green and beige</option>
           </select>
         </div>
@@ -42,7 +42,7 @@ function TestForm(props) {
           <label>4. What color do you associate with your personality?</label>
           <select name="q4" required>
             <option value="">Select an option</option>
-            <option value="calm">Light purple</option>
+            <option value="calm">Light blue</option>
             <option value="bold">Fiery orange</option>
             <option value="balanced">Soft gray</option>
           </select>
@@ -72,7 +72,7 @@ function TestForm(props) {
           <label>7. Which color would you choose for an accessory?</label>
           <select name="q7" required>
             <option value="">Select an option</option>
-            <option value="calm">Muted lavender</option>
+            <option value="calm">Muted pink</option>
             <option value="bold">Bright red</option>
             <option value="balanced">Classic black</option>
           </select>
@@ -99,12 +99,12 @@ function TestForm(props) {
         </div>
 
         <div className="test-question">
-          <label>10. How do you feel about monochromatic palettes?</label>
+          <label>10. What kind of tones do you enjoy seeing in home decor?</label>
           <select name="q10" required>
             <option value="">Select an option</option>
-            <option value="calm">I love them!</option>
-            <option value="bold">Not my style</option>
-            <option value="balanced">Depends on the colors</option>
+            <option value="calm">Soft Pastels</option>
+            <option value="bold">Bright and Saturated</option>
+            <option value="balanced">Earthy and Neutral</option>
           </select>
         </div>
 

@@ -23,9 +23,8 @@ function Index(props) {
 
       {colors.length === 0 ? (
           <div className="text-center">
-          <p>No colors yet! Add your first color to get started.</p>
-          <a href={`/colors/new?token=${props.token}`} className="add color button">
-            Add Your First Color
+          <a href={`/colors/new?token=${props.token}`} className="add-color-button-index">
+            <div className="whitespace"></div>
           </a>
         </div>
       ) : (
