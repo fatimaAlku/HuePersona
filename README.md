@@ -1,152 +1,83 @@
-# HuePersona 
+# 🎨 HuePersona
+
+HuePersona is a full-stack web application that blends personality psychology with color theory. Users can take a curated test to discover a color palette that reflects their personality traits — calm, bold, or balanced — and build a personalized collection of favorite colors.
 
 
-A full-stack MVC web application inspired by the Korean color analysis test that helps users discover their color palette based on their personality traits.
-
-
-
-## Demo
-![HuePersona Demo](./huepersona-prototype.png)
+## HuePersona Demo
+![HuePersona Demo](./HuePersona.png)
 
 ## Project Overview
 
-**HuePersona** combines psychology, design, and interactivity in a user-centric platform. It allows users to register, take a color-based personality test, view personalized results, and manage a list of their favorite colors.
+**HuePersona** combines interactive design, cultural psychology, and intuitive UX into one engaging platform. Users can register, log in securely, take a color personality test, receive a custom palette, and manage their own color collection — all within a sleek, responsive interface built using the MVC architecture.
 
 ---
 
-## Core Features
+## Built With
 
-### 1. Models
+- **Node.js** + **Express.js**
+- **MongoDB** + **Mongoose**
+- **JWT Authentication**
+- **MVC Architecture (Model–View–Controller)**
+- **Server-side Rendering (JSX via express-react-views)**
+- **CSS with Custom Styling**
 
-* **User Model**
-
-  * Fields: `username`, `email`, `password`
-* **Color Model**
-
-  * Fields: `name`, `hexValue`, `description`
-* **Relationships**
-
-  * A user can have multiple favorite colors.
-  * Each color is associated with specific personality traits.
 
 ---
 
-### 2. MVC Architecture
 
-* **Models**
+## Features
 
-  * Built with Mongoose for `User` and `Color`.
-* **Views**
-
-  * Dynamic user interfaces for login, registration, test-taking, and results using EJS or React.
-* **Controllers**
-
-  * Encapsulated route logic for user authentication and color analysis.
-
----
-
-### 3. Authentication System
-
-* JWT-based user authentication.
-* Protected routes for:
-
-  * Viewing/modifying favorite colors.
-  * Accessing personality test results.
-
----
-
-### 4. Unit Testing
-
-* Test suite for `User` model includes:
-
-  * User creation.
-  * Password hashing and validation.
-  * User lookup.
-
----
-
-### 5. Styling
-
-* Responsive UI using **CSS**.
+-  **Authentication**: Sign up, Login, and secure user sessions via JWT.
+-  **Personality Test**: Answer 10 curated questions to discover your matching color palette.
+-  **Dynamic Color Index**: View all your saved and suggested colors in a visually appealing grid.
+-  **Add, Edit, Delete Colors**: Manage your personal collection.
+-  **Results Stored**: Personality test results and colors are saved for future insight.
+-  **RESTful Routing**: Full MVC routing with data and view controllers.
+-  **Validation & Error Handling**: Mongoose validation, form error messages, and clean UX.
 
 ---
 
 
 
-## Implementation Steps
+ ## HuePersona Route Table
+ ### Auth Routes
 
-1. **Initialize Project**
-
-   * Set up Node.js, Express, Mongoose, and folder structure (`models/`, `views/`, `controllers/`, `routes/`).
-
-2. **Create Models**
-
-   * Implement and relate `User` and `Color` models in Mongoose.
-
-3. **Set Up Authentication**
-
-   * Use `jsonwebtoken` for signing/verifying tokens.
-   * Middleware to protect sensitive endpoints.
-
-4. **Color Analysis Logic**
-
-   * Interface to choose colors.
-   * Backend logic to map colors → profile.
-
-5. **CRUD Functionality**
-
-   * Full CRUD on user's favorite colors.
-
-6. **Unit Testing**
-
-   * Use Jest for model and auth testing.
-
-7. **Styling and UX**
-
-   * Polish design for usability and personality.
-
-8. **Deployment**
-
-   * Deployed using ......
+| Method          | Route         | Description                       | 
+| --------------- | --------------| ----------------------------------| 
+| GET             | `/auth`       | Show sign-up form                 | 
+| POST            | `/auth`       | Handle sign-up form & create user | 
+| GET             | `/auth/login` | Show login form                   | 
+| POST            | `/auth/login` | Handle login & return token       | 
+| PUT             | `/auth/:id`   | Update user                       | 
+| DELETE          | `/auth/:id`   | Delete user                       |
 
 
----
+### Color Routes
 
-## Route Table
-
- Protected Routes (JWT Required)
- User Routes
-
-| Method | Route                 | Description                   |
-| ------ | --------------------- | ----------------------------- |
-| GET    | `/user/profile`       | View logged-in user's profile |
-| GET    | `/user/favorites`     | View favorite colors          |
-| POST   | `/user/favorites`     | Add a color to favorites      |
-| DELETE | `/user/favorites/:id` | Remove a color from favorites |
+| Method | Route              | Description                      |
+| ------ | -------------------| ---------------------------------|
+| GET    | `/colors`          | Show logged-in user's color index|
+| GET    | `/colors/new`      | Show form to create new color    |
+| POST   | `/colors`          | Create a new color               |
+| GET    | `/colors/:id`      | Show a single color detail       |
+| GET    | `/colors/:id/edit` | Show form to edit a color        | 
+| PUT    | `/colors/:id`      | Update a color                   |
+| DELETE | `/colors/:id`      | Delete a color                   |
 
 
+### Personality Test Routes
 
-## Color Routes
-
-| Method | Route         | Description                      |
-| ------ | ------------- | -------------------------------- |
-| GET    | `/colors`     | List all colors                  |
-| GET    | `/colors/:id` | View one color with traits       |
-| POST   | `/colors`     | Add a new color  |
-| PUT    | `/colors/:id` | Update a color   |
-| DELETE | `/colors/:id` | Delete a color   |
+| Method | Route             | Description                               |
+| ------ | ------------------| ------------------------------------------|
+| GET    | `/colors/test`    | Show personality test form                |
+| POST   | `/colors/results` | Submit test answers and generate palette  |
 
 
-## Personality Test Routes
-
-| Method | Route           | Description                     |
-| ------ | --------------- | ------------------------------- |
-| GET    | `/test`         | Show personality test           |
-| POST   | `/test`         | Submit test answers             |
-| GET    | `/test/results` | View user’s latest test results |
-
+### Result Routes  
+(Handled inside controller, no public GET/POST)
 
 ---
+
 
 ## Bonus Features
 
@@ -161,7 +92,7 @@ A full-stack MVC web application inspired by the Korean color analysis test that
 * **Backend:** Node.js, Express.js
 * **Database:** MongoDB, Mongoose
 * **Authentication:** JWT
-* **Frontend:** EJS / React
+* **Frontend:** React
 * **Styling:** CSS 
 * **Testing:** Jest 
 
@@ -169,10 +100,4 @@ A full-stack MVC web application inspired by the Korean color analysis test that
 
 ## Inspiration
 
-Inspired by Korean color analysis tests that link personality and identity to color choices. HuePersona blends cultural psychology and web tech for a uniquely engaging app.
-
----
-
-## Conclusion
-
-HuePersona is a creative full-stack project with solid technical foundations, intuitive UI, and a playful concept. It’s an ideal beginner-to-intermediate project that showcases authentication, data relationships, MVC structure, testing, and user-centered design.
+HuePersona is inspired by Korean color analysis tests that connect personality traits to color preferences — a playful blend of psychology and visual identity. Built with a full-stack MVC architecture, it showcases how structure can fuel creativity: Mongoose models handle rich user and color data, React-based views bring the experience to life, and controllers orchestrate the flow. By combining cultural insight with modern web development patterns, HuePersona turns personal expression into an interactive, self-discovery journey.
