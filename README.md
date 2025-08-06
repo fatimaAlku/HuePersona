@@ -12,7 +12,7 @@ HuePersona is a full-stack web application that blends personality psychology wi
 
 ---
 
-## Built With
+## Technologies Used
 
 - **Node.js** + **Express.js**
 - **MongoDB** + **Mongoose**
@@ -37,64 +37,76 @@ HuePersona is a full-stack web application that blends personality psychology wi
 
 ---
 
+## Installation Instructions
+### 1. Clone the repo
+git clone https://github.com/yourusername/huepersona.git 
 
+cd huepersona
 
- ## HuePersona Route Table
- ### Auth Routes
+### 2. Install dependencies
+npm install
+
+### 3. Set environment variables
+Create a .env file:
+
+JWT_SECRET=your_jwt_secret
+
+MONGO_URI=mongodb://localhost:27017/HuePersona
+
+### 4. Run the app
+npm run dev
+
+---
+
+ ## API Documentation
+ ### Authentication
 
 | Method          | Route         | Description                       | 
 | --------------- | --------------| ----------------------------------| 
 | GET             | `/auth`       | Show sign-up form                 | 
 | POST            | `/auth`       | Handle sign-up form & create user | 
 | GET             | `/auth/login` | Show login form                   | 
-| POST            | `/auth/login` | Handle login & return token       | 
-| PUT             | `/auth/:id`   | Update user                       | 
-| DELETE          | `/auth/:id`   | Delete user                       |
+| POST            | `/auth/login` | Login existing user               | 
 
 
-### Color Routes
+### Colors
 
 | Method | Route              | Description                      |
 | ------ | -------------------| ---------------------------------|
-| GET    | `/colors`          | Show logged-in user's color index|
+| GET    | `/colors`          | View user's colors               |
 | GET    | `/colors/new`      | Show form to create new color    |
 | POST   | `/colors`          | Create a new color               |
-| GET    | `/colors/:id`      | Show a single color detail       |
+| GET    | `/colors/:id`      | Show a single color              |
 | GET    | `/colors/:id/edit` | Show form to edit a color        | 
 | PUT    | `/colors/:id`      | Update a color                   |
 | DELETE | `/colors/:id`      | Delete a color                   |
 
 
-### Personality Test Routes
+### Personality Test
 
 | Method | Route             | Description                               |
 | ------ | ------------------| ------------------------------------------|
-| GET    | `/colors/test`    | Show personality test form                |
+| GET    | `/colors/test`    | Take the test                             |
 | POST   | `/colors/results` | Submit test answers and generate palette  |
 
 
-### Result Routes  
+### Result 
 (Handled inside controller, no public GET/POST)
 
 ---
 
 
-## Bonus Features
+## Bonus Feature
 
 * **RESTful API** for front-end/client interaction.
-* Load testing with **Artillery**.
-* Cloud deployment for public access.
 
 ---
 
-## Tech Stack
+## Future Improvements
 
-* **Backend:** Node.js, Express.js
-* **Database:** MongoDB, Mongoose
-* **Authentication:** JWT
-* **Frontend:** React
-* **Styling:** CSS 
-* **Testing:** Jest 
+* Add user-selected themes
+* Add search and filtering for color collections
+* Deploy to Railway
 
 ---
 
