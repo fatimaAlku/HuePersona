@@ -53,16 +53,10 @@ function Index(props) {
     Add New Color
   </a>
 
- <a
-  href="#"
-  className="logout-button"
-  onClick={(e) => {
-    e.preventDefault();
-    window.location.href = '/login'; // remove the token from the URL
-  }}
->
+<a href="/auth/login" className="logout-button">
   Logout
 </a>
+
 
 
 

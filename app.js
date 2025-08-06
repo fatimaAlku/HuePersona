@@ -10,6 +10,8 @@ const apiRoutes = require('./routes/apiRoutes');
 
 const app = express();
 
+app.use('/auth', userRoutes); 
+
 
 const testController = require('./controllers/colors/testController');
 

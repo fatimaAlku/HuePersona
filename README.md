@@ -1,7 +1,7 @@
 # HuePersona 
 
 
-A full-stack MVC web application inspired by the Korean color analysis test that helps users discover their color palette based on their favorite colors.
+A full-stack MVC web application inspired by the Korean color analysis test that helps users discover their color palette based on their personality traits.
 
 
 
@@ -20,10 +20,10 @@ A full-stack MVC web application inspired by the Korean color analysis test that
 
 * **User Model**
 
-  * Fields: `username`, `email`, `password`, `favoriteColors` (Array of Color IDs)
+  * Fields: `username`, `email`, `password`
 * **Color Model**
 
-  * Fields: `name`, `hexValue`, `description`, `relatedTraits` (Array of Strings)
+  * Fields: `name`, `hexValue`, `description`
 * **Relationships**
 
   * A user can have multiple favorite colors.
