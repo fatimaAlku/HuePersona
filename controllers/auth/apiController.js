@@ -2,7 +2,7 @@ const User = require('../../models/user')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
-// API Authentication middleware - uses headers instead of query params
+// API Authentication middleware
 exports.auth = async (req, res, next) => {
   try {
     const token = req.header('Authorization').replace('Bearer ', '')

@@ -2,9 +2,8 @@ const User = require('../../models/user')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
-// instead of creating an object we can use the exports object directly
-// this is how
 
+// Exports object 
 exports.auth = async (req, res, next) => {
   try {
     let token
@@ -26,8 +25,9 @@ exports.auth = async (req, res, next) => {
   } catch (error) {
     res.status(401).send('Not authorized')
   }
-} // check
+} 
 
+// Create user
 exports.createUser = async (req, res, next) => {
   try{
     const user = new User(req.body)
@@ -39,8 +39,9 @@ exports.createUser = async (req, res, next) => {
   } catch(error){
     res.status(400).json({message: error.message})
   }
-}// good but needs to change
+}
 
+// Login user
 exports.loginUser = async (req, res, next) => {
   try{
     const user = await User.findOne({ email: req.body.email })
@@ -57,6 +58,7 @@ exports.loginUser = async (req, res, next) => {
   }
 }
 
+// Update user ///currently unused
 exports.updateUser = async (req, res) => {
   try{
     const updates = Object.keys(req.body)
@@ -70,6 +72,7 @@ exports.updateUser = async (req, res) => {
   
 }
 
+// Delete user ///currently unused
 exports.deleteUser = async (req, res) => {
   try{
     await req.user.deleteOne()

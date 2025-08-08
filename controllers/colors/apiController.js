@@ -1,6 +1,6 @@
 const Color = require('../../models/color.js')
 
-// API Color controllers - returns JSON responses
+// API Color controllers returns JSON responses
 const apiController = {
   // Get all colors for authenticated user
   index(req, res) {

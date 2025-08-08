@@ -8,7 +8,7 @@ router.post('/', dataController.createUser, viewController.redirectToLogin)// si
 router.get('/', viewController.signUp) // show sign up form
 router.post('/login', dataController.loginUser, colorsViewController.redirectHome)
 router.get('/login', viewController.signIn) // show login form
-router.put('/:id', dataController.updateUser)
-router.delete('/:id', dataController.auth, dataController.deleteUser)
+router.put('/:id', dataController.updateUser) ///currently unused
+router.delete('/:id', dataController.auth, dataController.deleteUser) ///currently unused
 
 module.exports = router

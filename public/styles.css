@@ -1,4 +1,4 @@
-/* === GLOBAL BASE === */
+/* === GLOBAL SCOPE === */
 body {
   font-family: 'Times New Roman', Times, serif;
   background: linear-gradient(to bottom right, #f3f0ff, #f9f7ff);
@@ -253,9 +253,6 @@ body {
   opacity: 0.9;
 }
 
-
-
-/* === SHARED TEXT UTILITIES === */
 .text-center {
   display: flex;
   flex-direction: column;
@@ -402,7 +399,7 @@ form {
   justify-content: center;
   align-items: center;
   background-color: #f8f4ff;
-  padding: 1rem; /* fallback space on small screens */
+  padding: 1rem; 
   z-index: 1;
 }
 
