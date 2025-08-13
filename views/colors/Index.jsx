@@ -29,7 +29,7 @@ function Index(props) {
         </div>
       ) : (
           <div className="colors-grid">
-          {colors.map((color) => (
+          {colors.slice(0, 5).map((color) => (
               <div key={color._id} className="color-card">
               <div className="color-sample" style={{ backgroundColor: color.hexValue }}></div>
               <div className="color-name"><strong>{color.name}</strong></div>

@@ -3,7 +3,7 @@ const Color = require('../../models/color.js')
 
 const dataController = {
   index(req, res, next) {
-    Color.find({ user: req.user._id }) // ✅ Must filter by logged-in user
+    Color.find({ user: req.user._id }) // Must filter by logged-in user
       .then((colors) => {
         res.locals.data.colors = colors;
         next();

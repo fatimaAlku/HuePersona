@@ -562,3 +562,8 @@ form {
 .submit-test:hover {
   opacity: 0.9;
 }
+
+
+a {
+  background-color: #5d2ab4;
+}

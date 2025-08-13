@@ -27,23 +27,33 @@ const testController = {
   },
 
   // POST /results – process test
-  handleResults: async (req, res) => {
+ handleResults: async (req, res) => {
   try {
     const userId = req.user._id;
     const answers = Object.values(req.body);
 
+    // Count frequencies
     const counts = { calm: 0, bold: 0, balanced: 0 };
-    answers.forEach((answer) => {
-      if (counts[answer]) counts[answer]++;
-    });
+    for (let answer of answers) {
+      if (counts.hasOwnProperty(answer)) {
+        counts[answer]++;
+      }
+    }
 
-    // Tie-safe selection
-    const maxCount = Math.max(...Object.values(counts));
-    const topTypes = Object.keys(counts).filter(type => counts[type] === maxCount);
-    const resultType = topTypes[Math.floor(Math.random() * topTypes.length)];
+    // Determine the resultType based on highest count
+    let resultType = 'calm'; // default
+    let maxCount = 0;
+
+    for (const type in counts) {
+      if (counts[type] > maxCount) {
+        maxCount = counts[type];
+        resultType = type;
+      }
+    }
 
     const selectedPalette = palettes[resultType];
 
+    // Create the colors in DB
     const createdColors = await Promise.all(
       selectedPalette.map((color) =>
         Color.create({ ...color, user: userId })
@@ -53,7 +63,7 @@ const testController = {
     await Result.create({
       user: userId,
       answers,
-      colors: createdColors.map((c) => c._id)
+      colors: createdColors.map((c) => c._id),
     });
 
     const token = req.query.token;
@@ -63,6 +73,7 @@ const testController = {
     res.status(500).send('Something went wrong. Please try again.');
   }
 }
+
 
 }
 
